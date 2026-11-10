@@ -111,7 +111,7 @@
     const el = document.querySelector('.rolling-number');
     const yearEl = document.querySelector('.rolling-year');
     if (!el) return;
-    const target = Number(el.dataset.final || '13');
+    const target = Number(el.dataset.final || '18');
     const targetYear = Number(yearEl?.dataset.final || '2026');
     let tick = 0;
     const timer = window.setInterval(() => {

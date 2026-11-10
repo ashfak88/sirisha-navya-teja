@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import Page from './Page.jsx'
-import Credit from './Credit.jsx'
 import { bodyClass, bodyStyle, scripts } from './legacy.js'
 
 // The original page scripts expect to run while the page loads: replay DOMContentLoaded / load for them.
@@ -33,11 +32,6 @@ export default function App() {
     })()
   }, [])
   return (
-    <>
-      <Page />
-      <div style={{ background: '#f2ddbb', padding: '14px 0 26px', textAlign: 'center', fontSize: 10, letterSpacing: '.28em', textTransform: 'uppercase', color: 'rgba(60,50,40,.6)', fontFamily: "sans-serif" }}>
-        <Credit />
-      </div>
-    </>
+    <Page />
   )
 }

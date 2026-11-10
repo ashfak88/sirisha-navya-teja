@@ -6,7 +6,7 @@
 .reception{background-image:url('assets/section-3-reception.webp');background-size:100% auto;background-position:center top;background-repeat:no-repeat;background-color:#f5c18b;display:flex;justify-content:center;align-items:flex-start;min-height:max(100svh, 2.22614 * 100vw);height:auto;box-sizing:border-box}.sky-copy{width:min(88%,680px);padding-top:4.5svh;text-align:center;color:var(--burgundy);text-shadow:0 1px 6px rgba(255,226,181,.7)}.script-heading{font-family:'Great Vibes',cursive;font-weight:400}.reception-heading{font-size:clamp(2.5rem,9vw,4.7rem);line-height:1;margin:.45rem 0}.reception-message{font-size:clamp(.9rem,3.4vw,1.25rem);line-height:1.12;margin-top:.5rem}.reception-date{font:700 clamp(.9rem,3.6vw,1.4rem)/1.18 'Playfair Display',serif;color:#16100d;letter-spacing:.035em}.reception-date sup{font-size:.55em}.reception-time{font:700 clamp(.9rem,3.7vw,1.4rem) 'Playfair Display',serif;color:#16100d;margin:.45rem 0}.venue-name{font:700 clamp(.8rem,3.1vw,1.2rem)/1.2 'Playfair Display',serif;letter-spacing:.035em;margin-top:.5rem}.venue-address{font-size:clamp(.85rem,3vw,1.12rem);color:#17110e;margin-top:.35rem}
 .ceremonies{background-image:url('assets/section-4-ceremonies.webp');display:flex;justify-content:center;align-items:center;min-height:100svh}.ceremony-copy{width:min(86%,650px);text-align:center;padding:3vh 0 4vh;color:var(--burgundy);text-shadow:0 1px 5px rgba(255,235,205,.75)}.our-word{font:italic 1.1rem 'Cormorant Garamond',serif}.ceremony-copy h2{font:600 clamp(1.8rem,7vw,3.2rem)/1.05 'Playfair Display',serif;margin:.1rem 0}.ceremony-tagline{font-size:clamp(.95rem,3.2vw,1.2rem);color:#1b120e;margin:.4rem 0}.ceremony-card h3{font:clamp(2rem,7vw,3.1rem)/1 'Great Vibes',cursive;margin:.2rem 0 .4rem;color:var(--burgundy)}.event-date{font:700 clamp(.73rem,2.9vw,1.05rem)/1.2 'Playfair Display',serif;color:#17110e;margin:.3rem 0}.event-detail{font-size:clamp(.83rem,3vw,1.1rem);line-height:1.12;color:#17110e;margin:.22rem 0}.ceremony-note{font:italic clamp(.9rem,3.2vw,1.15rem)/1.15 'Parisienne',cursive;color:var(--burgundy);margin:.5rem 0 .2rem}.ceremony-card{padding:.2rem 0}
 .venue{background-image:url('assets/section-5-venue.webp');display:flex;justify-content:center;align-items:flex-start;min-height:100svh}.venue-sky-copy{width:min(87%,650px);padding-top:5svh;text-align:center;color:var(--burgundy);text-shadow:0 1px 6px rgba(255,227,188,.72)}.venue-sky-copy h2{font-size:clamp(2.8rem,10vw,4.6rem);line-height:1;margin:0}.venue-subtitle{font-size:clamp(1rem,3.6vw,1.3rem);margin:.5rem 0}.venue-sky-copy h3{font:600 clamp(1rem,3.8vw,1.4rem)/1.2 'Playfair Display',serif;margin:.6rem 0 .5rem}.venue-detail{font-size:clamp(.86rem,3.1vw,1.12rem);line-height:1.18;margin:.55rem 0}.directions-button{display:inline-block;text-decoration:none;margin-top:.7rem;padding:.7rem 1.2rem;border:1px solid #9a642d;border-radius:28px;background:rgba(255,245,221,.92);color:var(--burgundy);font:600 .8rem 'Playfair Display',serif;box-shadow:0 4px 15px #6c3c1c24;transition:transform .2s,background .2s}.directions-button:hover{transform:translateY(-2px);background:#fff7e8}
-.closing{background-image:url('assets/section-6-closing.webp');display:flex;align-items:center;justify-content:flex-end;min-height:100svh}.closing-copy{width:51%;margin-right:5%;margin-top:-1%;text-align:center;color:var(--burgundy);text-shadow:0 1px 5px rgba(255,239,210,.8)}.closing-copy>p{font:clamp(1.2rem,4.6vw,2rem)/1.15 'Parisienne',cursive;margin:0 0 1.15rem}.with-love{font:italic clamp(1rem,3.6vw,1.4rem) 'Cormorant Garamond',serif}.closing-names{font:clamp(2.1rem,7vw,3.7rem)/1.05 'Great Vibes',cursive;transform:translateX(120%);opacity:0;animation:slideNames 1.3s cubic-bezier(.2,.8,.2,1) .4s forwards}@keyframes slideNames{to{transform:translateX(0);opacity:1}}
+.closing{background-image:url('assets/section-6-closing.jpg');display:flex;align-items:center;justify-content:flex-end;min-height:100svh}.closing-copy{width:51%;margin-right:5%;margin-top:-1%;text-align:center;color:var(--burgundy);text-shadow:0 1px 5px rgba(255,239,210,.8)}.closing-copy>p{font:clamp(1.2rem,4.6vw,2rem)/1.15 'Parisienne',cursive;margin:0 0 1.15rem}.with-love{font:italic clamp(1rem,3.6vw,1.4rem) 'Cormorant Garamond',serif}.closing-names{font:clamp(2.1rem,7vw,3.7rem)/1.05 'Great Vibes',cursive;transform:translateX(120%);opacity:0;animation:slideNames 1.3s cubic-bezier(.2,.8,.2,1) .4s forwards}@keyframes slideNames{to{transform:translateX(0);opacity:1}}
 @media(min-width:700px){.section{background-size:cover}.intro-copy{padding-top:4vh}.couple-feet{width:min(30%,390px);top:42%;max-height:49%}.blessings-copy{width:min(62%,620px)}.sky-copy,.venue-sky-copy{padding-top:3.5vh}.ceremony-copy{width:min(65%,650px)}.closing-copy{width:45%;margin-right:6%}}
 @media(max-height:700px) and (max-width:600px){.intro-copy{padding-top:3vh}.couple-feet{top:43%;max-height:42%;width:53%}.blessings-copy{padding:1vh 0}.ganesha{width:45px}.parent-names{margin:.6vh 0}.ornament{margin:.6vh auto}.ceremony-copy{padding:1vh 0}.ceremony-card h3{font-size:2rem}.reception .sky-copy,.venue-sky-copy{padding-top:2vh}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
@@ -245,7 +245,7 @@
  .instagram-pill{font-size:.78rem;padding:.6rem .9rem}
 }
 
-/* Screenshot-led refinements confirmed for the Ranjith & Harnee invitation. */
+/* Screenshot-led refinements confirmed for the Navya Teja & Sirisha invitation. */
 /* Opening: nudge the quote down within the envelope panel and separate the prompt from the hanging tassel. */
 .opening-quote{top:47%;}
 .seal-prompt{top:85%;}
@@ -380,7 +380,7 @@
 @media(max-width:420px){.closing-copy{width:45% !important;margin-right:4% !important;transform:translateY(1svh) !important}.closing-copy>p{font-size:.88rem !important;margin-bottom:.7rem !important}.closing-names{font-size:clamp(1.65rem,5.5vw,1.95rem) !important;row-gap:.28em !important}}
 
 
-/* User-confirmed refinements: Ranjith Kumar & Harnee (Oct 2026). */
+/* User-confirmed refinements: Navya Teja & Sirisha (Nov 2026). */
 /* Opening quote: move the paragraph slightly upward. */
 .opening-quote{top:46.5% !important;}
 @media(min-width:700px){.opening-quote{top:47% !important;}}
@@ -476,7 +476,7 @@ html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){.animation-only-opening .opening-flap,.animation-only-opening.leaving{transition-duration:.25s}}
 
 
-/* Original Ranjith & Harnee artwork: V-shaped split opens vertically (top up, bottom down). */
+/* Original Navya Teja & Sirisha artwork: V-shaped split opens vertically (top up, bottom down). */
 .v-envelope-opening{perspective:1400px;isolation:isolate;background:#f4d9ad;transition:opacity 1.9s ease,visibility 1.9s ease}
 .v-envelope-opening .opening-bg{z-index:0;transition:opacity 1.7s ease,transform 1.7s ease,filter 1.7s ease}
 .opening-v-half{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:3;pointer-events:none;backface-visibility:hidden;transform-style:preserve-3d;will-change:transform,opacity,filter}
@@ -1055,4 +1055,37 @@ a {
   min-height: max(100vh, 222.614vw) !important;
   min-height: max(100svh, 222.614vw) !important;
   height: auto !important;
+}
+
+/* Keep parents' Mr. and Mrs. names cleanly on a single line */
+.blessings-copy {
+  width: min(72%, 580px) !important;
+}
+
+.parent-names {
+  white-space: nowrap !important;
+  font-size: clamp(.72rem, 2.5vw, 1.15rem) !important;
+}
+
+.parent-names .parent-line {
+  display: block;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 480px) {
+  .blessings-copy {
+    width: 72% !important;
+  }
+  .parent-names {
+    font-size: clamp(.64rem, 2.7vw, .84rem) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .blessings-copy {
+    width: 74% !important;
+  }
+  .parent-names {
+    font-size: clamp(.58rem, 2.5vw, .7rem) !important;
+  }
 }
