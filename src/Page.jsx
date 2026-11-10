@@ -36,13 +36,23 @@ export default function Page() {
             <div className="invite-lines">We invite you to<br />celebrate the wedding of</div>
             <h1 className="couple-name intro-name">
               <span className="name-line">Navya Teja</span>
-              <span className="amp-line">{"&"}</span>
+              <span className="amp-line">
+                <span className="amp-flourish"></span>
+                <span className="amp-char">{"&"}</span>
+                <span className="amp-flourish"></span>
+              </span>
               <span className="name-line">Sirisha</span>
             </h1>
             <div className="date-rolling" aria-label="November 18 2026">
               <span className="date-label">NOVEMBER</span>
               <span className="rolling-number" data-final="18">00</span>
               <span className="rolling-year" data-final="2026">0000</span>
+            </div>
+
+            <div className="wedding-details-intro">
+              <p className="wedding-intro-time">WEDNESDAY · MUHURTHAM 9:01 PM</p>
+              <p className="wedding-intro-venue">Behera Palace Kalyana Vedika</p>
+              <p className="wedding-intro-address">Near Tholi Pavancha, Simhachalam, Vizag</p>
             </div>
           </div>
           <img className="couple-feet" src="assets/couple-feet-transparent.webp" alt="Traditional bride and groom feet illustration" />
@@ -105,7 +115,7 @@ export default function Page() {
             <h3>RR Gardens</h3>
             <p className="venue-detail">Poranki - Nidamanuru Road,<br />Poranki, Vijayawada</p>
             <p className="venue-detail">Saturday, 21 November 2026<br />7:00 PM onwards</p>
-            <a className="directions-button" href="https://www.google.com/maps/search/?api=1&query=RR+Gardens+Poranki+Vijayawada" target="_blank" rel="noopener">⌖ &nbsp; Tap for Directions</a>
+            <a className="directions-button" href="https://maps.app.goo.gl/32kP8CBTdWvRp1af7?g_st=iw" target="_blank" rel="noopener noreferrer">⌖ &nbsp; Tap for Directions</a>
             <p className="venue-detail" style={{ marginTop: '0.85rem' }}>
               Contact: <a href="tel:9666906677" style={{ color: 'inherit', fontWeight: 600, textDecoration: 'none' }}>+91 9666906677</a>
             </p>

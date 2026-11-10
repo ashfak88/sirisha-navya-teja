@@ -1089,3 +1089,114 @@ a {
     font-size: clamp(.58rem, 2.5vw, .7rem) !important;
   }
 }
+
+/* 1) Visible, attractive, luxury wedding couple name typography */
+.intro-name {
+  margin: 0.5rem 0 0.7rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 0.08em !important;
+}
+
+.intro-name .name-line {
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  font-size: clamp(2.75rem, 9.5vw, 4.6rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.04em !important;
+  color: #631224 !important;
+  text-shadow: 0 1px 0 rgba(255, 248, 224, 0.98), 0 2px 8px rgba(99, 18, 36, 0.22) !important;
+  display: block !important;
+}
+
+.intro-name .amp-line {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 0.12rem 0 !important;
+}
+
+.intro-name .amp-flourish {
+  height: 1px !important;
+  width: clamp(28px, 9vw, 54px) !important;
+  background: linear-gradient(90deg, transparent, #b98543, transparent) !important;
+  display: inline-block !important;
+  opacity: 0.85 !important;
+}
+
+.intro-name .amp-char {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  font-size: 0.68em !important;
+  line-height: 1 !important;
+  color: #b98543 !important;
+  text-shadow: 0 1px 1px rgba(255, 248, 224, 0.9) !important;
+  display: inline-block !important;
+}
+
+@media (max-width: 420px) {
+  .intro-name {
+    margin: 0.35rem 0 0.5rem !important;
+    gap: 0.05em !important;
+  }
+  .intro-name .name-line {
+    font-size: clamp(2.45rem, 9.2vw, 3.2rem) !important;
+  }
+  .intro-name .amp-flourish {
+    width: 28px !important;
+  }
+}
+
+/* 2) Wedding details: Nov 18 in Vizag */
+.wedding-details-intro {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--burgundy);
+  text-shadow: 0 1px 5px rgba(255, 235, 198, .75);
+}
+
+.wedding-intro-time {
+  margin: 0;
+  font: 700 clamp(0.78rem, 2.8vw, 1.05rem) 'Playfair Display', serif;
+  letter-spacing: 0.06em;
+  color: #1a120e;
+}
+
+.wedding-intro-venue {
+  margin: 0.1rem 0 0;
+  font: 700 clamp(0.85rem, 3.2vw, 1.18rem)/1.2 'Playfair Display', serif;
+  letter-spacing: 0.03em;
+  color: var(--burgundy);
+}
+
+.wedding-intro-address {
+  margin: 0;
+  font: italic clamp(0.8rem, 2.9vw, 1.02rem)/1.25 'Cormorant Garamond', serif;
+  letter-spacing: 0.02em;
+  color: #2b1a13;
+}
+
+@media (max-width: 420px) {
+  .wedding-details-intro {
+    margin-top: 0.4rem;
+    gap: 0.15rem;
+  }
+  .wedding-intro-time {
+    font-size: 0.76rem;
+  }
+  .wedding-intro-venue {
+    font-size: 0.82rem;
+  }
+  .wedding-intro-address {
+    font-size: 0.78rem;
+  }
+}
