@@ -59,13 +59,13 @@
       if (feet) {
         feet.addEventListener('animationend', finishIntroSequence, { once: true });
         intro.classList.add('intro-legs-start');
-        // Safety fallback sits just after the 2.25s leg descent, so text never appears early.
-        window.setTimeout(finishIntroSequence, 2600);
+        // Safety fallback sits just after the 1.45s leg descent so text reveals promptly.
+        window.setTimeout(finishIntroSequence, 1550);
       } else {
         intro.classList.add('intro-legs-start');
         finishIntroSequence();
       }
-    }, 1200);
+    }, 1050);
   });
 
   const closingSection = document.getElementById('closing');
@@ -77,21 +77,23 @@
           closingObserver.disconnect();
         }
       });
-    }, { threshold: 0.25 });
+    }, { threshold: 0.05, rootMargin: '0px 0px 8% 0px' });
     closingObserver.observe(closingSection);
   } else if (closingSection) {
     closingSection.classList.add('in-view');
   }
 
-  // Soft reveal for section content as each section enters the viewport.
+  // Smooth, immediate reveal for section content as each section enters the viewport.
   const revealTargets = document.querySelectorAll('.section .intro-copy > *, .blessings-copy > *, .sky-copy > *, .ceremony-copy > *, .venue-sky-copy > *, .closing-copy > *');
-  let introRevealIndex = 0;
-  revealTargets.forEach((el, i) => {
+  const sectionCounts = new WeakMap();
+  revealTargets.forEach((el) => {
     el.classList.add('smooth-reveal');
-    // First-section copy reveals in a slower, deliberate cascade after the legs land.
+    const parent = el.parentElement;
+    const idx = sectionCounts.get(parent) || 0;
+    sectionCounts.set(parent, idx + 1);
     const delay = el.closest('.intro-copy')
-      ? introRevealIndex++ * 280
-      : Math.min(i % 8, 7) * 75;
+      ? idx * 90
+      : Math.min(idx, 6) * 55;
     el.style.setProperty('--reveal-delay', `${delay}ms`);
   });
   if ('IntersectionObserver' in window) {
@@ -102,7 +104,7 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px 10% 0px' });
     revealTargets.forEach(el => revealObserver.observe(el));
   } else {
     revealTargets.forEach(el => el.classList.add('is-visible'));
@@ -153,7 +155,7 @@
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const colors = ['red', 'white'];
   let active = 0;
-  const maxActive = 18;
+  const maxActive = 8;
   function dropPetal() {
     if (!document.getElementById('invitation')?.classList.contains('entered')) return;
     if (active >= maxActive) return;
@@ -162,20 +164,20 @@
     petal.className = 'rose-petal-fx' + (isRed ? ' red' : '');
     petal.setAttribute('aria-hidden', 'true');
     petal.style.left = `${Math.random() * 100}vw`;
-    petal.style.setProperty('--petal-w', `${8 + Math.random() * 8}px`);
-    petal.style.setProperty('--petal-h', `${13 + Math.random() * 12}px`);
-    petal.style.setProperty('--petal-duration', `${7 + Math.random() * 5}s`);
-    petal.style.setProperty('--petal-delay', `${Math.random() * .8}s`);
-    petal.style.setProperty('--petal-drift', `${Math.round(Math.random() * 100 - 50)}px`);
-    petal.style.setProperty('--petal-rot', `${Math.round(180 + Math.random() * 360)}deg`);
+    petal.style.setProperty('--petal-w', `${8 + Math.random() * 7}px`);
+    petal.style.setProperty('--petal-h', `${12 + Math.random() * 10}px`);
+    petal.style.setProperty('--petal-duration', `${7.5 + Math.random() * 4}s`);
+    petal.style.setProperty('--petal-delay', `${Math.random() * .5}s`);
+    petal.style.setProperty('--petal-drift', `${Math.round(Math.random() * 90 - 45)}px`);
+    petal.style.setProperty('--petal-rot', `${Math.round(180 + Math.random() * 320)}deg`);
     document.body.appendChild(petal);
     active++;
-    const duration = parseFloat(petal.style.getPropertyValue('--petal-duration')) * 1000 + 1000;
+    const duration = parseFloat(petal.style.getPropertyValue('--petal-duration')) * 1000 + 600;
     window.setTimeout(() => { petal.remove(); active = Math.max(0, active - 1); }, duration);
   }
-  // A small initial scatter, then a steady, mobile-friendly flow.
+  // A gentle initial scatter, then a lightweight mobile-friendly flow.
   document.getElementById('openSeal')?.addEventListener('click', () => {
-    for (let i = 0; i < 7; i++) window.setTimeout(dropPetal, i * 260);
-    window.setInterval(dropPetal, 650);
+    for (let i = 0; i < 4; i++) window.setTimeout(dropPetal, i * 320);
+    window.setInterval(dropPetal, 1150);
   }, { once: true });
 })();

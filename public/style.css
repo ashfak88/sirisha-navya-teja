@@ -735,41 +735,45 @@ html{scroll-behavior:smooth}
   }
 }
 
-/* Updated57: smooth, uninterrupted leg descent only; background blending and sequence timing stay locked. */
+/* Updated57: smooth, GPU-composited leg descent centered cleanly via left/right auto. */
 @keyframes feetEnterSmooth {
   0% {
     opacity: 0;
-    transform: translate3d(-50%, calc(-100% - 12px), 0);
+    transform: translate3d(0, calc(-100% - 12px), 0);
     animation-timing-function: cubic-bezier(.22, .61, .36, 1);
   }
   84% {
     opacity: 1;
-    transform: translate3d(-50%, 1.6%, 0);
+    transform: translate3d(0, 1.4%, 0);
     animation-timing-function: cubic-bezier(.34, 1.2, .64, 1);
   }
   93% {
     opacity: 1;
-    transform: translate3d(-50%, -.45%, 0);
+    transform: translate3d(0, -.35%, 0);
     animation-timing-function: ease-out;
   }
   100% {
     opacity: 1;
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 .intro.intro-legs-start:not(.intro-sequence-done) img.couple-feet {
   will-change: transform, opacity;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform: translate3d(-50%, calc(-100% - 12px), 0);
-  animation: feetEnterSmooth 2.25s cubic-bezier(.22, .61, .36, 1) 0s forwards !important;
-  animation-duration: 2.25s !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  transform: translate3d(0, calc(-100% - 12px), 0);
+  animation: feetEnterSmooth 1.45s cubic-bezier(.22, .61, .36, 1) 0s forwards !important;
+  animation-duration: 1.45s !important;
   animation-delay: 0s !important;
 }
 @media (prefers-reduced-motion: reduce) {
   .intro.intro-legs-start:not(.intro-sequence-done) img.couple-feet {
-    animation: feetEnterSmooth 2.25s cubic-bezier(.22, .61, .36, 1) 0s forwards !important;
-    animation-duration: 2.25s !important;
+    animation: feetEnterSmooth 1.45s cubic-bezier(.22, .61, .36, 1) 0s forwards !important;
+    animation-duration: 1.45s !important;
     animation-delay: 0s !important;
   }
 }
@@ -1254,19 +1258,14 @@ html, body {
   box-sizing: border-box !important;
 }
 
-/* Neutralize horizontal transform offsets so text is never shifted right or left */
+/* Keep children horizontally centered cleanly while allowing smooth vertical fade-and-rise animations */
 .intro-copy > *,
 .intro.intro-sequence-start .intro-copy > *,
-.intro.intro-sequence-done .intro-copy > *,
-.intro.intro-sequence-done .intro-copy > *.smooth-reveal.is-visible,
-.intro.intro-sequence-done .intro-copy > *.smooth-reveal:not(.is-visible),
-.section .smooth-reveal:is(h1, h2, h3, .together, .beautiful, .eyebrow, .date-rolling, .ceremony-tagline),
-.section .smooth-reveal:is(h1, h2, h3, .together, .beautiful, .eyebrow, .date-rolling, .ceremony-tagline).is-visible {
+.intro.intro-sequence-done .intro-copy > * {
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
   max-width: 100% !important;
-  transform: none !important;
 }
 
 /* Feet centered horizontally and contained */
@@ -1401,4 +1400,97 @@ html, body {
   font-size: 0.78rem !important;
   letter-spacing: 0.03em !important;
   white-space: nowrap !important;
+}
+
+/* ========================================================
+   MOBILE 60FPS SCROLL & SMOOTH TEXT ANIMATION OPTIMIZATION
+   Eliminates mask-image/blur scroll jank and ensures fluid
+   GPU-composited text reveal animations across all sections.
+   ======================================================== */
+html {
+  scroll-behavior: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.invitation {
+  touch-action: pan-y;
+}
+
+/* Remove expensive per-frame full-viewport alpha masking and blur passes during mobile scroll */
+.section,
+.site-footer {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  margin-top: 0 !important;
+  contain: layout style paint;
+}
+
+.music-toggle {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(255, 246, 226, 0.96) !important;
+}
+
+/* Simplify rose petals for mobile GPU smoothness */
+.rose-petal-fx {
+  clip-path: none !important;
+  box-shadow: none !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Unified, silky GPU fade-and-rise transitions for every text block (zero horizontal shift) */
+.section .smooth-reveal,
+.section .smooth-reveal:is(h1, h2, h3, .together, .beautiful, .eyebrow, .date-rolling, .ceremony-tagline),
+.section .script-heading.smooth-reveal,
+.section .ceremony-title.smooth-reveal {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0) !important;
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transition-delay: var(--reveal-delay, 0ms) !important;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.section .smooth-reveal.is-visible,
+.section .smooth-reveal:is(h1, h2, h3, .together, .beautiful, .eyebrow, .date-rolling, .ceremony-tagline).is-visible,
+.section .script-heading.smooth-reveal.is-visible,
+.section .ceremony-title.smooth-reveal.is-visible {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  will-change: auto;
+}
+
+/* First-section reveal: stays hidden cleanly until feet settle, then glides in smoothly */
+.intro:not(.intro-sequence-done) .intro-copy > * {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translate3d(0, 12px, 0) !important;
+}
+
+.intro.intro-sequence-done .intro-copy > *,
+.intro.intro-sequence-done .intro-copy > *.smooth-reveal.is-visible,
+.intro.intro-sequence-done .intro-copy > *.smooth-reveal:not(.is-visible) {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition: opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1), transform 0.52s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transition-delay: var(--reveal-delay, 0ms) !important;
+  will-change: auto;
+}
+
+/* Smooth GPU slide-in for closing couple names without overflowing screen width */
+.closing-names {
+  transform: translate3d(28px, 0, 0) !important;
+  opacity: 0 !important;
+  animation: none !important;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transition-delay: 120ms !important;
+}
+
+.closing.in-view .closing-names {
+  transform: translate3d(0, 0, 0) !important;
+  opacity: 1 !important;
+  animation: none !important;
 }
