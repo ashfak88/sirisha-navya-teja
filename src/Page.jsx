@@ -51,7 +51,7 @@ export default function Page() {
 
             <div className="wedding-details-intro">
               <p className="wedding-intro-time">WEDNESDAY · MUHURTHAM 9:01 PM</p>
-              <p className="wedding-intro-venue">Behera Palace Kalyana Vedika</p>
+              <p className="wedding-intro-venue">Behara Palace Kalyana Vedika</p>
               <p className="wedding-intro-address">Near Tholi Pavancha, Simhachalam, Vizag</p>
             </div>
           </div>
@@ -115,10 +115,10 @@ export default function Page() {
             <h3>RR Gardens</h3>
             <p className="venue-detail">Poranki - Nidamanuru Road,<br />Poranki, Vijayawada</p>
             <p className="venue-detail">Saturday, 21 November 2026<br />7:00 PM onwards</p>
-            <a className="directions-button" href="https://maps.app.goo.gl/32kP8CBTdWvRp1af7?g_st=iw" target="_blank" rel="noopener noreferrer">⌖ &nbsp; Tap for Directions</a>
-            <p className="venue-detail" style={{ marginTop: '0.85rem' }}>
-              Contact: <a href="tel:9666906677" style={{ color: 'inherit', fontWeight: 600, textDecoration: 'none' }}>+91 9666906677</a>
-            </p>
+            <div className="venue-actions">
+              <a className="directions-button" href="https://maps.app.goo.gl/32kP8CBTdWvRp1af7?g_st=iw" target="_blank" rel="noopener noreferrer">⌖ &nbsp; Tap for Directions</a>
+              <a className="directions-button contact-button" href="tel:9666906677">☏ &nbsp; Contact: +91 9666906677</a>
+            </div>
           </div>
         </section>
 

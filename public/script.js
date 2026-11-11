@@ -41,6 +41,7 @@
     const intro = document.getElementById('intro');
     window.setTimeout(() => {
       opening.remove();
+      window.scrollTo(0, 0);
       intro.scrollIntoView({behavior:'auto',block:'start'});
       const feet = intro.querySelector('.couple-feet');
       let sequenceFinished = false;
