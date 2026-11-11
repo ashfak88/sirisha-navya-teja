@@ -71,7 +71,7 @@ export default function Page() {
               <img src="assets/burgundy-lotus-divider.png" alt="" aria-hidden="true" />
             </div>
             <p className="parent-names">
-              <span className="parent-line">Mr. Vasamsetti Venkateswara Rao &amp; Mrs. Naga Veni</span>
+              <span className="parent-line">Mr. Vasamsetti Venkateswara Rao &amp; Mrs. Nagaveni</span>
               <small style={{ display: 'block', fontSize: '0.78em', marginTop: '3px' }}>(Parents of the Bride)</small>
             </p>
             <p className="blessing-line">whose love shaped us and whose blessings guide us.</p>
@@ -86,6 +86,7 @@ export default function Page() {
           </div>
         </section>
 
+        {/* Reception Slide */}
         <section id="reception" className="section reception" aria-label="Wedding reception invitation">
           <div className="sky-copy">
             <div className="eyebrow">TOGETHER WITH OUR FAMILIES<br />WE JOYFULLY INVITE YOU TO OUR</div>
@@ -99,23 +100,8 @@ export default function Page() {
             </div>
             <div className="reception-time">7:00 PM ONWARDS</div>
             <div className="venue-name">RR Gardens</div>
-            <div className="venue-address">Poranki - Nidamanuru Road, Poranki, Vijayawada</div>
-          </div>
-        </section>
-
-
-
-        <section id="venue" className="section venue" aria-label="Reception venue and directions">
-          <div className="venue-sky-copy">
-            <h2 className="script-heading">Reception Venue</h2>
-            <p className="venue-subtitle">Find your way to our celebration</p>
-            <div className="ornament">
-              <img src="assets/burgundy-lotus-divider.png" alt="" aria-hidden="true" />
-            </div>
-            <h3>RR Gardens</h3>
-            <p className="venue-detail">Poranki - Nidamanuru Road,<br />Poranki, Vijayawada</p>
-            <p className="venue-detail">Saturday, 21 November 2026<br />7:00 PM onwards</p>
-            <div className="venue-actions">
+            <p className="venue-address">Poranki - Nidamanuru Road,<br />Poranki, Vijayawada</p>
+            <div className="venue-actions" style={{ marginTop: '0.8rem' }}>
               <a className="directions-button" href="https://maps.app.goo.gl/32kP8CBTdWvRp1af7?g_st=iw" target="_blank" rel="noopener noreferrer">⌖ &nbsp; Tap for Directions</a>
               <a className="directions-button contact-button" href="tel:9666906677">☏ &nbsp; Contact: +91 9666906677</a>
             </div>
